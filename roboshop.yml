@@ -43,9 +43,9 @@ kind: Job
 metadata:
   name: catalogue-schema-load
 spec:
+  backoffLimit: 4
   template:
     spec:
-      backoffLimit: 4
       restartPolicy: Never
       volumes:
       - name: parameters
