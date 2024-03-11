@@ -8,6 +8,7 @@ spec:
   containers:
     - name: frontend
       image: rkalluru/d77-frontend
+      imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Pod
