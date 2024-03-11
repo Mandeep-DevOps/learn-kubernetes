@@ -98,7 +98,7 @@ kind: Service
 metadata:
   name: frontend
 spec:
-  type: LoadBalancer
+  #type: LoadBalancer # we prefer to use ingress
   selector:
     app: frontend
   ports:
@@ -182,6 +182,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: frontend
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: frontend-dev.rdevopsb73.online
 spec:
   ingressClassName: nginx
   rules:
