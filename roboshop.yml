@@ -44,8 +44,8 @@ metadata:
   name: catalogue-schema-load
 spec:
   template:
-    backoffLimit: 4
     spec:
+      backoffLimit: 4
       restartPolicy: Never
       volumes:
       - name: parameters
