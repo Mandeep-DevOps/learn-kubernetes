@@ -18,7 +18,13 @@ spec:
       - name: frontend
         image: rkalluru/d77-frontend
         imagePullPolicy: Always
-
+        resources:
+          requests:
+            memory: "250Mi"
+            cpu: "500m"
+          limits:
+            memory: "500Mi"
+            cpu: "750m"
 ---
 apiVersion: apps/v1
 kind: ReplicaSet
@@ -50,6 +56,13 @@ spec:
         - name: catalogue
           image: rkalluru/d77-catalogue
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "100m"
+            limits:
+              memory: "150Mi"
+              cpu: "100m"
           volumeMounts:
           - mountPath: /parameters
             name: parameters
@@ -124,6 +137,13 @@ spec:
         - name: user
           image: rkalluru/d77-user
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "100m"
+            limits:
+              memory: "150Mi"
+              cpu: "100m"
           volumeMounts:
           - mountPath: /parameters
             name: parameters
@@ -153,6 +173,13 @@ spec:
         - name: parameters-pull
           image: docker.io/rkalluru/d77-parameter-store-init-container-image
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "100m"
+            limits:
+              memory: "150Mi"
+              cpu: "100m"
           volumeMounts:
           - mountPath: /parameters
             name: parameters
@@ -201,6 +228,13 @@ spec:
         - name: payment
           image: rkalluru/d77-payment
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "200Mi"
+              cpu: "200m"
+            limits:
+              memory: "250Mi"
+              cpu: "250m"
           volumeMounts:
           - mountPath: /parameters
             name: parameters
@@ -238,6 +272,13 @@ spec:
         - name: shipping
           image: rkalluru/d77-shipping
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "1000m"
+            limits:
+              memory: "2.5Gi"
+              cpu: "1500m"
           volumeMounts:
           - mountPath: /parameters
             name: parameters
