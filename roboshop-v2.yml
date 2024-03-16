@@ -215,7 +215,7 @@ metadata:
   labels:
     app: shipping
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: shipping
